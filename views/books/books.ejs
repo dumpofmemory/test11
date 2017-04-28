@@ -1,0 +1,104 @@
+<% include ../partials/header %>
+<% include ../partials/navbar %>
+<style>
+    .strokeme
+{
+    color: ;
+    text-shadow:
+    -1px -1px 0 #fff,
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+    
+}
+
+.book-img-shadow {
+    -webkit-box-shadow: -14px 17px 20px -3px rgba(222,219,222,1);
+-moz-box-shadow: -14px 17px 20px -3px rgba(222,219,222,1);
+box-shadow: -14px 17px 20px -3px rgba(222,219,222,1);
+}
+</style>
+
+<script>
+
+    jQuery(document).ready(function ($) {
+
+
+    $('[data-toggle="ajaxModal"]').on('click',
+        function (e) {
+            $('#ajaxModal').remove();
+            e.preventDefault();
+            var $this = $(this),
+                $remote = $this.data('remote') || $this.attr('href'),
+                $modal = $('<div class="modal" id="ajaxModal"><div class="modal-body"></div></div>');
+            $('body').append($modal);
+            $modal.modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+            $modal.load($remote);
+
+        }
+    );
+});
+</script>
+
+<div class="container">
+    <header class="jumbotron" style="background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('http://mikeconkey.com/wp-content/uploads/2016/08/photo-1457369804613-52c61a468e7d-810x540.jpg');">
+        <h1 style="color: white;">
+            <% if(!currentUser){ %>
+            <h1 style="color: white;">Welcome to BookSelf </h1> 
+            
+            
+        <%    } else { %>
+                <h1 style="color: white;">Welcome to BookSelf, <%= currentUser.username %></h1> 
+            <% } %>
+        <p style="color: white;">Add your favourite books onto the shelf</p>
+        
+        <p>
+            <a class="btn btn-success btn-large" href="/books/new">Add new book</a>
+        </p>
+    </header>
+    
+    <!-- CREATING A GRID OF IMAGES -->
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>This is what you have added recently</h3> 
+        </div>
+    </div>
+    
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+   
+        <% books.forEach(function(book){ %>
+         <%    if(currentUser && book.author.id.equals(currentUser._id)) { %>    
+            <div class="col-md-3 col-sm-6">
+            <a class="book-btn" href="/books/<%=book._id %>" data-toggle="ajaxModal" data-target="#theModal">
+                <div class="card">
+                    <img class="img-responsive book-thumb book-img-shadow" src=" <%= book["image"] %> " />
+                    
+                    <div class="caption" style="width: 200px">
+                        <h4><%= book["name"] %></h4> <!--or use the dotted notation to call the object property: ground.name -->
+                    </div>
+                    
+                </div> <!--card--> 
+                </a>
+            </div> 
+            <% }%> 
+        <% });%>
+       
+    </div> <!-- class row -->
+</div> <!-- container -->
+
+
+     <!-- ========== MODALS ===================================== -->
+    <div class="container">
+        <div class="row">
+            <div id="theModal" class="modal fade in">
+            </div>
+        </div>
+    </div>
+    <!-- ======================== MODALS =========================== -->
+  
+  
+
+<% include ../partials/footer %>

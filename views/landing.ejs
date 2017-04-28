@@ -1,0 +1,41 @@
+<% include partials/header %>
+<link href="./stylesheets/main.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+<div class="home-product">
+
+    <div class="container sgnup-container">
+      
+      
+      <% if(!currentUser) { %>
+        <form class="form-signin" action="/login" method="POST">       
+          <h1 class="form-signin-heading">BookSelf</h1>
+          <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
+          <input type="password" class="form-control" name="password" placeholder="Password" required=""/>     
+          
+          <!--<input class="btn btn-lg btn-block b1" type="submit" formaction="/login" value="login">-->
+          <!--<input class="btn btn-lg btn-block b2" type="submit" formaction="/register" value="signup">-->
+          
+          <button class="btn b1" type="submit" formaction="/login">login</button>
+          <button class="btn b2" type="submit" formaction="/register">signup</button>
+        </form>
+      <!--<p class="text-center signup"><strong><a>Sign up</a></strong> for a new account</p>-->
+      
+          
+     <% } else { %>
+             <p><a class="btn btn-lg btn-success btn-block" href="/logout">Logout</a> </p>
+           
+     <% } %>
+    </div>
+
+
+
+
+</div>
+
+
+<!--<div id="fullBg" />-->
+
+
+
+
+<% include partials/footer %>

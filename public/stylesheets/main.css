@@ -1,0 +1,288 @@
+/*@import "bourbon";*/
+
+body{margin:0px; padding:0px;}
+@-webkit-keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -400px 0;}
+}
+ 
+@keyframes backgroundScroll {
+from {background-position: 0 0;}
+to {background-position: -400px 0;}
+}
+.home-product {
+    /*background:url("https://images.pexels.com/photos/34592/pexels-photo.jpg?w=1260&h=750&auto=compress&cs=tinysrgb");*/
+    background:url("https://source.unsplash.com/user/thkelley/hHL08lF7Ikc");
+    /*float: left;*/
+    padding: 100px 0;
+    width: 100%;
+    color:#fff !important;
+	/*min-height:641px;*/
+	-webkit-animation: backgroundScroll 35s linear infinite;
+    animation: backgroundScroll 10s linear infinite;
+    background-size:130% 130%;
+	background-position:top;
+	background-attachment:fixed;
+  min-height: 100vh;
+}
+
+.sgnup-container{
+  display: flex;
+  /*justify-content: center;*/
+  /*flex-direction: column;*/
+  /*align-items: center;*/
+}
+
+
+.form-signin-heading{
+  font-family: 'Amatic SC', cursive;
+  font-size: 50px;
+}
+
+/*=========================== LANDING PAGE STYLING ==================================*/
+a{
+    color: #fff;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+a:hover{
+    color: #fff;
+    
+}
+
+.b1:hover, .b2:hover{
+  background-color: rgb(128, 255, 0);
+  color: #fff;
+}
+.b1, .b2 {
+  background-color: rgba(128, 255, 0, 0.5);
+  display: inline-block;
+}
+
+
+/*#fullBg {  */
+/*    z-index: -1;*/
+/*    height: 100%;*/
+/*    width: 100%;*/
+/*    position: absolute;*/
+/*    top: 0px;*/
+/*    background: url('https://31.media.tumblr.com/3b08b64bfe69d670c91c03a5e2fd42b6/tumblr_mv5lnjrRQ51qfj2dqo1_1280.jpg') no-repeat center center fixed; */
+/*    background-size: cover;*/
+/*}*/
+
+.signup {
+  color: #fff;
+  font-size: 12px;
+}
+
+.form-signin {
+  max-width: 280px;
+  margin: 60px auto 10px;
+}
+
+  .form-signin-heading {
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+	  margin-bottom: 20px;
+	}
+
+	.checkbox {
+	  font-weight: normal;
+	}
+
+	.form-control {
+	  border-radius: 0px;
+	  position: relative;
+	  font-size: 16px;
+	  height: auto;
+	  padding: 10px;
+	    /*@include box-sizing(border-box);*/
+	}
+
+  .btn {
+    font-weight: bold;
+    border-radius: 6px;
+    border: none;
+    display: inline;
+    /*transition: all .2s ease-in-out;*/
+  }
+  
+  /*.b1:hover{*/
+  /*  color: #111;*/
+    /* fill: #111; */
+    /* border-color: #999!important; */
+  /*  box-shadow: 0 1px 2px rgba(0,0,0,.08);*/
+  /*}*/
+  
+  .b1, .b2{
+    color: #fff;
+    /*color: #999;*/
+    fill: #777;
+    background-color: transparent;
+    border-color: #ddd;
+    
+    height: 32px;
+    padding: 0 11px;
+    font-size: 11px;
+    line-height: 30px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    text-align: center;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    font-family: 'Helvetica Neue',Helvetica,sans-serif;
+  }
+/*}*/
+
+
+/* ADD NEW BOOK STYLING*/
+input, textarea {
+            background: transparent;
+            border-top: transparent !important;
+            border-left: transparent !important;
+            border-right: transparent !important;
+            border-bottom: 2px solid #888!important;
+            font-weight: 200;
+            color: white;
+            padding-left: 0;
+            box-shadow: none !important;
+            margin-bottom: 20px;
+            /*border-radius: 3px 3px 0px 0px;	  */
+}
+
+input[type="text"], #book-desc {
+  border-radius: 0px;
+}
+
+*{
+    font-family: 'Quicksand', sans-serif;
+}
+label{
+    margin-top: 20px;
+}
+button {
+    border-color: #ddd!important;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+}
+.btn-sm{
+    
+    color: #999;
+    fill: #777;
+    /*background-color: transparent;*/
+    border: 1px solid transparent;
+    border-radius: 6px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.04);
+    text-align: center;
+    letter-spacing: .04em;
+    /*text-transform: uppercase;*/
+    background-color: #fff;
+    float: right;
+}
+
+.btn-sm:hover {
+        /*color: #111;*/
+        color: green;
+        fill: #111;
+        /*border-color: #999!important;*/
+        border-color: green!important;
+        box-shadow: 0 1px 2px rgba(0,0,0,.08);
+        
+}
+
+.btn-sm:focus{
+    outline: 0;
+}
+
+.add-book-container {
+  margin-top: 100px; 
+  width: 60%;
+}
+
+.document_cell {
+  margin: 15px 0 35px 0; 
+  width: auto; 
+  display: -webkit-box; 
+  display: -webkit-flex; 
+  display: -ms-flexbox; 
+  display: flex; 
+  -webkit-box-align: start; 
+  -webkit-align-items: flex-start; 
+  -ms-flex-align: start; 
+  align-items: flex-start;
+}
+
+.row {
+  /*background-color: #f4f4f4;*/
+}
+.card {
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #e1e1e1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  box-sizing: border-box;
+  background: white;
+  line-height: 21px;
+  position: relative;
+  margin: 30px 20px 30px 20px;
+ 
+}
+
+.card_content {
+  /*display: inline-block; */
+  /*box-sizing: border-box; */
+  /*width: 158px; */
+  /*height: 192px; */
+  /*vertical-align: top; */
+  /*padding: 12px; */
+  /*position: relative;*/
+  
+  box-sizing: border-box;
+  color: #333;
+cursor:pointer;
+display:inline-block;
+font-family:"Sofia Pro", sans-serif;
+font-size:16px;height:192px;
+line-height:21px;
+list-style-image:none;
+list-style-position:outside;
+list-style-type:none;
+padding-bottom:12px;
+padding-left:12px;
+padding-right:12px;
+padding-top:12px;
+position:relative;
+text-align:left;
+vertical-align:top;
+white-space:normal;
+width:158px;
+-webkit-font-smoothing:antialiased;
+}
+
+
+.book-btn{
+  color: #333;
+}
+
+.book-btn:active, .book-btn:hover,
+.book-btn:focus, .book-btn:visited, .book-btn:link {
+  color: #333;
+  text-decoration: none!important;
+  border-color: transparent!important;
+  outline: 0;
+}
+.book-thumb{
+  height:302px;
+  width:232px;
+  
+}
+
+.caption {
+  padding: 12px;
+  margin: 12px 0 12px 0;
+}

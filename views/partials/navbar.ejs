@@ -1,0 +1,18 @@
+ <nav class="navbar navbar-full navbar-default">
+            <div class="container-fluid">
+                 <div class="navbar-header">
+                    <a class="navbar-brand" href="/books"><img style="width: 150px; position: absolute; top: -13px; left: -11px; "src="https://68.media.tumblr.com/61a47e23bf6c555700773f5d59c9c3db/tumblr_op4trijy6T1tiha98o1_1280.png" /></a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <% if(!currentUser){ %>
+                           <li><a href="/">Login</a></li>
+                           <li><a href="/">Signup</a></li>
+                        <% } else { %>
+                           <li><a href="/books/new"><img src="https://image.flaticon.com/icons/svg/139/139063.svg" style="width:50px; height :50px"></a></li>
+                           <li><a href="/logout">Logout</a></li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </nav>

@@ -1,0 +1,45 @@
+<% include ../partials/header %>
+
+
+<style>
+    .modal-header {
+        margin: 50px auto 0 auto;
+    }
+    .modal-body, .modal-footer {
+        text-align: justify;
+        margin: 0 auto;
+    }
+   
+   .modal-body, .modal-header, .modal-footer{
+       background: #fff;
+       width:500px;
+   }
+</style> 
+
+
+    <div class="modal-header">
+        <a class="btn btn-default" href="/books/<%= book._id %>/edit">edit book</a>
+        <a class="btn btn-default" href="/books/<%= book._id %>/delete">delete book</a>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3><%= book.name %></h3>
+    </div>
+    
+    <div class="modal-body">
+        <p><%= book.desc %></p>
+    </div>
+
+
+<div class="modal-footer">
+    
+    
+     <a class="btn btn-success" href="/books/<%= book._id %>/comments/new">add your review</a>
+     <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+</div>
+
+<div class="modal-body">
+    <p><img src="" /></p>
+    <% book.comments.forEach(function(comment){ %>
+        <p><strong><%= comment.author.username %></strong> - <%= comment.text %></p>
+    <% }); %>
+</div>
+

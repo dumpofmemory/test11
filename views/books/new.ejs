@@ -1,0 +1,62 @@
+<% include ../partials/header %>
+<% include ../partials/navbar %>
+<style>
+    input.gsc-input, 
+    .gsc-input-box, 
+    .gsc-input-box-hover, 
+    .gsc-input-box-focus {
+        color:#222;
+        border: none;
+    }
+</style>
+<div class="container add-book-container" style="">
+    <div class="row">
+            <form action="/books" method="POST" enctype="multipart/form-data">
+                <div class="form-group row">
+                    <label for="book-name" class="col-xs-3 col-form-label">Book Name </label>
+                    <div class="col-xs-9">
+                        <input class="form-control" type="text" name="name" id="book-name" />
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="book-image-url-input" class="col-xs-3 col-form-label">Find the Book Cover Image</label>
+                    <div class="col-xs-9">
+                        <script>
+  (function() {
+    var cx = '015603025126327349164:w1jm9cwewqq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:search></gcse:search>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="book-image-url-input" class="col-xs-3 col-form-label">Book Image URL</label>
+                    <div class="col-xs-9">
+                        <input class="form-control" type="text" name="image" id="book-image-url-input">
+                    </div>
+                </div>
+                 <div class="form-group row">
+                    <label for="book-desc" class="col-xs-3 col-form-label">Book Description</label>
+                    <div class="col-xs-9">
+                    <!--<input class="form-control" type="text" name="desc" placeholder="description">-->
+                        <textarea class="form-control" name="desc" id="book-desc"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <button class="btn btn-sm">Add me</button>
+                </div>
+            </form>
+             
+        <!--</div>-->
+    </div> <!-- .row -->
+</div> <!-- .container -->
+
+
+
+<% include ../partials/footer %>
